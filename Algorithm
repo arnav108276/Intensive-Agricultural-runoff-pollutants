@@ -66,6 +66,7 @@ Q5: Accept state, indicating pollution is detected.
 Q6: Reject state, indicating no pollution is detected.
 
 Algorithm:
+
 Start in state Q0.
 Move the tape head right until a symbol is encountered.
 If the symbol is 'S' (sample), transition to state Q1.
