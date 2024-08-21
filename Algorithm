@@ -4,7 +4,6 @@ Algorithm on Topic-Intensive Agriculture Runoff Detection
 - Input tape contains symbols representing water samples.
 
 
-
  2. States
 - Q0: Start state
 - Q1: Detect presence of pollutants
