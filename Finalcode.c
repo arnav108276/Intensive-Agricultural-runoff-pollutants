@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <GL/freeglut.h>
 #include <math.h>
-
 #define PI 3.14159265359
-
 void drawCircle(float cx, float cy, float radius, int num_segments) {
     glBegin(GL_TRIANGLE_FAN);
     for (int i = 0; i < num_segments; ++i) {
