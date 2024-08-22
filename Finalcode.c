@@ -14,7 +14,6 @@ void drawCircle(float cx, float cy, float radius, int num_segments) {
     }
     glEnd();
 }
-
 void drawSemicircle(float cx, float cy, float radius, int num_segments) {
     glBegin(GL_LINE_STRIP);
     for (int i = 0; i <= num_segments; ++i) {
