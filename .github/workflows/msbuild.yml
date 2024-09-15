@@ -1,4 +1,4 @@
-name: Build C Code
+name: Build and Run OpenGL Code
 
 on:
   push:
@@ -14,14 +14,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up GCC
-      run: sudo apt-get install -y gcc
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc freeglut3-dev libglew-dev libglm-dev xvfb
 
-    - name: Install OpenGL
-      run: sudo apt install freeglut3-dev
+    - name: Set up virtual display
+      run: |
+        Xvfb :99 -screen 0 1024x768x24 &
+        export DISPLAY=:99
 
     - name: Build Finalcode.c
-      run: gcc Finalcode.c -lGL -lGLU -lglut -lm -o Finalcode
+      run: |
+        gcc Finalcode.c -lGL -lGLU -lglut -lm -o Finalcode
 
     - name: Run Finalcode
-      run: ./Finalcode
+      run: |
+        export DISPLAY=:99
+        ./Finalcode
