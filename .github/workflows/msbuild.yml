@@ -23,11 +23,14 @@ jobs:
     - name: Set up virtual display
       run: |
         Xvfb :99 -screen 0 1024x768x24 &
+        sleep 3  # Wait for Xvfb to start
         export DISPLAY=:99
 
     - name: Build Finalcode.c
       run: |
+        export DISPLAY=:99
         gcc Finalcode.c -lGL -lGLU -lglut -lm -o Finalcode
+        chmod +x Finalcode  # Ensure it's executable
 
     - name: Run Finalcode
       run: |
