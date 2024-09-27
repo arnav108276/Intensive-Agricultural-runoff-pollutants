@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 
+    timeout-minutes: 10
 
     steps:
     - name: Checkout code
@@ -22,17 +22,22 @@ jobs:
 
     - name: Set up virtual display
       run: |
+        echo "Starting Xvfb..."
         Xvfb :99 -screen 0 1024x768x24 &
-        sleep 3  # Wait for Xvfb to start
+        sleep 5  # Wait for Xvfb to initialize
         export DISPLAY=:99
+        echo "Xvfb started on DISPLAY=:99"
 
     - name: Build Finalcode.c
       run: |
-        export DISPLAY=:99
+        echo "Building Finalcode.c..."
         gcc Finalcode.c -lGL -lGLU -lglut -lm -o Finalcode
-        chmod +x Finalcode  # Ensure it's executable
+        chmod +x Finalcode
+        echo "Build completed"
 
     - name: Run Finalcode
       run: |
         export DISPLAY=:99
-        ./Finalcode
+        echo "Running Finalcode..."
+        timeout 30s ./Finalcode  # Limits execution to 30 seconds to avoid hanging
+        echo "Run completed"
