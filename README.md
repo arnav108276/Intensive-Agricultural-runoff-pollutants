@@ -1,4 +1,5 @@
-# Turing-machine
+# Turing-machine ![OpenGL](https://img.shields.io/badge/OpenGL-Used-brightgreen)
+
  Intensive Agriculture Runoff: Runoff from intensive agriculture carries pollutants into water bodies, causing water quality issues and ecosystem disruption.
 
 
