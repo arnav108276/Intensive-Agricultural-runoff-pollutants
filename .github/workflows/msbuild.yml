@@ -24,7 +24,7 @@ jobs:
       run: |
         echo "Starting Xvfb..."
         Xvfb :99 -screen 0 1024x768x24 &
-        sleep 5  # Wait for Xvfb to initialize
+        sleep 5
         export DISPLAY=:99
         echo "Xvfb started on DISPLAY=:99"
 
@@ -39,5 +39,6 @@ jobs:
       run: |
         export DISPLAY=:99
         echo "Running Finalcode..."
-        timeout 30s ./Finalcode  # Limits execution to 30 seconds to avoid hanging
+        ./Finalcode > output.log 2>&1
+        cat output.log
         echo "Run completed"
