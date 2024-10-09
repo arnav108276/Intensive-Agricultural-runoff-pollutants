@@ -4,6 +4,7 @@
 
 ### [  ∐  denotes blank]   
 
+
 - Initialization (Q0):
 - Start in state Q0.
 - Move the tape head right until a symbol is encountered.
