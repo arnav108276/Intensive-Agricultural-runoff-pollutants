@@ -1,9 +1,10 @@
 #Setup before running code given below
+/*
 Code given below would run only in linux (Ubuntu)
 Before running code we must install freeglut3-dev library of open GL in system
 The code given can run in VS code but one needs to download glfw package and glad.
 C code for constructing turing machine initial prototype
-
+*/
 
 
 #include <stdio.h>
