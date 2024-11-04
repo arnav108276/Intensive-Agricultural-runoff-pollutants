@@ -22,3 +22,22 @@
 - Transition to state Q5 since pollutants are confirmed.
 - Accept State (Q5):
 - Pollution is detected, so the Turing machine enters the accept state Q5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
